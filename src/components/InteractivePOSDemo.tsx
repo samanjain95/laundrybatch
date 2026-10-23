@@ -360,7 +360,7 @@ export const InteractivePOSDemo: React.FC = () => {
                   Connaught Place, New Delhi • GST: 07ABCDE1234F1Z5
                 </div>
                 <div style={{ fontSize: '0.72rem', color: '#4b5563' }}>
-                  Ph: +91 96662 11137 • hello@laundrybatch.com
+                  Ph: +91 73893 27066 • hello@laundrybatch.com
                 </div>
               </div>
 

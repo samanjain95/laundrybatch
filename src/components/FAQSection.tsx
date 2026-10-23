@@ -140,7 +140,7 @@ export const FAQSection: React.FC = () => {
             </div>
           </div>
           <a
-            href="https://wa.me/919666211137?text=Hi%20Laundrybatch%20Team!%20I%20would%20like%20to%20know%20more."
+            href="https://wa.me/917389327066?text=Hi%20Laundrybatch%20Team!%20I%20would%20like%20to%20know%20more."
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary"

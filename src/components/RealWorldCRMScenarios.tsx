@@ -304,7 +304,7 @@ export const RealWorldCRMScenarios: React.FC = () => {
               Want to see this live in your shop? We will set up your camera and QR tags in 15 minutes.
             </span>
             <a
-              href="https://wa.me/919666211137?text=Hi%20Laundrybatch!%20I%20want%20to%20see%20how%20your%20CRM%20stops%20damage%20claims%20and%20lost%20clothes."
+              href="https://wa.me/917389327066?text=Hi%20Laundrybatch!%20I%20want%20to%20see%20how%20your%20CRM%20stops%20damage%20claims%20and%20lost%20clothes."
               target="_blank"
               rel="noopener noreferrer"
               style={{

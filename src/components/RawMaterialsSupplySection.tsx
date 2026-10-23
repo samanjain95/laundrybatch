@@ -315,7 +315,7 @@ export const RawMaterialsSupplySection: React.FC<{ onOrderSupplies: () => void }
                 <ArrowRight size={15} />
               </button>
               <a
-                href="https://wa.me/919666211137?text=Hi%20Laundrybatch!%20I%20want%20to%20order%20wholesale%20detergents,%20heat%20tags,%20and%20hangers."
+                href="https://wa.me/917389327066?text=Hi%20Laundrybatch!%20I%20want%20to%20order%20wholesale%20detergents,%20heat%20tags,%20and%20hangers."
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{

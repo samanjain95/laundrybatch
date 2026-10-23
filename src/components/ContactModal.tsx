@@ -183,7 +183,19 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose, ini
               </button>
             </form>
 
-            <div style={{ textAlign: 'center', marginTop: '16px', fontSize: '0.75rem', color: 'var(--text-muted)' }}>
+            <div style={{ textAlign: 'center', marginTop: '14px', fontSize: '0.82rem', color: 'var(--text-sub)' }}>
+              Prefer instant chat?{' '}
+              <a
+                href="https://wa.me/917389327066?text=Hi%20Laundrybatch!%20I%20want%20to%20set%20up%20my%20store."
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: '#15803d', fontWeight: 700, textDecoration: 'none' }}
+              >
+                WhatsApp +91 73893 27066
+              </a>
+            </div>
+
+            <div style={{ textAlign: 'center', marginTop: '8px', fontSize: '0.74rem', color: 'var(--text-muted)' }}>
               🔒 Bank-grade security • Zero spam • Data stays 100% in India
             </div>
           </div>

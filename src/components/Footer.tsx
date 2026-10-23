@@ -147,7 +147,10 @@ export const Footer: React.FC<FooterProps> = ({ onOpenTool, onOpenLegal, onOpenD
             <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '12px', fontSize: '0.85rem' }}>
               <li style={{ display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
                 <Phone size={16} color="#0d9488" style={{ marginTop: '2px', flexShrink: 0 }} />
-                <span>+91-9666211137 (Sales & WhatsApp)</span>
+                <span>
+                  <a href="tel:+917389327066" style={{ color: 'inherit', textDecoration: 'none', fontWeight: 700 }}>+91 73893 27066</a>{' '}
+                  (<a href="https://wa.me/917389327066" target="_blank" rel="noopener noreferrer" style={{ color: '#25D366', textDecoration: 'none', fontWeight: 700 }}>WhatsApp</a>)
+                </span>
               </li>
               <li style={{ display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
                 <Mail size={16} color="#0d9488" style={{ marginTop: '2px', flexShrink: 0 }} />

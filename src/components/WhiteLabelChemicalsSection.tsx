@@ -265,7 +265,7 @@ export const WhiteLabelChemicalsSection: React.FC<{ onSampleKitRequest: () => vo
                 <ArrowRight size={16} />
               </button>
               <a
-                href={`https://wa.me/919666211137?text=Hi%20Laundrybatch!%20I%20want%20to%20order%20white-label%20detergent%20for%20my%20store%20${encodeURIComponent(customBrandName)}.`}
+                href={`https://wa.me/917389327066?text=Hi%20Laundrybatch!%20I%20want%20to%20order%20white-label%20detergent%20for%20my%20store%20${encodeURIComponent(customBrandName)}.`}
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
