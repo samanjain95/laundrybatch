@@ -25,6 +25,8 @@ import {
 import { LaundryTumblerCanvas } from './LaundryTumblerCanvas';
 import { translations } from '../data/translations';
 
+import { getAssetUrl } from '../utils/assetUrl';
+
 interface HeroProps {
   currentLang: string;
   onOpenDemo: () => void;
@@ -60,7 +62,7 @@ export const Hero: React.FC<HeroProps> = ({ currentLang, onOpenDemo, onOpenTrial
       sub: '10s WhatsApp Bill',
       badgeColor: '#0d9488',
       headline: 'Lightning-Fast Counter POS & WhatsApp Invoices',
-      photo: '/images/pos_terminal.jpg',
+      photo: getAssetUrl('images/pos_terminal.jpg'),
       points: [
         'WhatsApp bill with 1-click UPI QR code',
         'Works 100% offline during power cuts',
@@ -76,7 +78,7 @@ export const Hero: React.FC<HeroProps> = ({ currentLang, onOpenDemo, onOpenTrial
       sub: 'Zero Disputes',
       badgeColor: '#0284c7',
       headline: 'Pre-Wash Intake Camera: Stop Damage Disputes',
-      photo: '/images/hero_laundry.jpg',
+      photo: getAssetUrl('images/hero_laundry.jpg'),
       points: [
         'Snap 2s photo of tears, stains, missing buttons',
         'Photo auto-watermarked & sent to customer WhatsApp',
@@ -92,7 +94,7 @@ export const Hero: React.FC<HeroProps> = ({ currentLang, onOpenDemo, onOpenTrial
       sub: '15kg - 120kg',
       badgeColor: '#10b981',
       headline: 'Heavy-Duty Commercial Washers & Iron Tables',
-      photo: '/images/machinery_facility.jpg',
+      photo: getAssetUrl('images/machinery_facility.jpg'),
       points: [
         'Surgical SUS-304 stainless steel drum & body',
         'Cuts power & water consumption by 42%',
@@ -108,7 +110,7 @@ export const Hero: React.FC<HeroProps> = ({ currentLang, onOpenDemo, onOpenTrial
       sub: 'Your Shop Name',
       badgeColor: '#f59e0b',
       headline: 'Factory Bio-Enzymes with YOUR Store Logo',
-      photo: '/images/chemicals_bottles.jpg',
+      photo: getAssetUrl('images/chemicals_bottles.jpg'),
       points: [
         'Concentrated German bio-enzyme stain lifters',
         'Printed with your laundry logo, phone & address',
@@ -124,7 +126,7 @@ export const Hero: React.FC<HeroProps> = ({ currentLang, onOpenDemo, onOpenTrial
       sub: 'Depot Supplies',
       badgeColor: '#8b5cf6',
       headline: 'Indestructible 200°C Heat-Seal QR Garment Tags',
-      photo: '/images/process_infographic.jpg',
+      photo: getAssetUrl('images/process_infographic.jpg'),
       points: [
         'Survives 200°C hot wash, dry cleaning solvents & tumble',
         'Never washes off, never bleeds color into clothes',

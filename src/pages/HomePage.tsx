@@ -1,10 +1,11 @@
 import React from 'react';
 import { Hero } from '../components/Hero';
+import { OriginalCRMTourSection } from '../components/OriginalCRMTourSection';
+import { RealWorldCRMScenarios } from '../components/RealWorldCRMScenarios';
 import { EcosystemPillarsNav } from '../components/EcosystemPillarsNav';
 import { InteractiveProcessInfographic } from '../components/InteractiveProcessInfographic';
-import { OriginalCRMTourSection } from '../components/OriginalCRMTourSection';
 import { InteractivePOSDemo } from '../components/InteractivePOSDemo';
-import { RealWorldCRMScenarios } from '../components/RealWorldCRMScenarios';
+import { InteractiveToolsSuite } from '../components/InteractiveToolsSuite';
 import { MachineryAndProcessSection } from '../components/MachineryAndProcessSection';
 import { RawMaterialsSupplySection } from '../components/RawMaterialsSupplySection';
 import { WhiteLabelChemicalsSection } from '../components/WhiteLabelChemicalsSection';
@@ -26,51 +27,54 @@ export const HomePage: React.FC<HomePageProps> = ({
 }) => {
   return (
     <div>
-      {/* 1. Hero Section */}
+      {/* 1. Hero Section with 5-Pillar Interactive Discovery */}
       <Hero
         currentLang={currentLang}
         onOpenDemo={onOpenDemo}
         onOpenTrial={onOpenTrial}
       />
 
-      {/* 2. 4 Pillars Unified Platform Navigator */}
-      <EcosystemPillarsNav />
-
-      {/* 3. 360° Plant & Retail Process Infographic & Products Spotlight */}
-      <InteractiveProcessInfographic />
-
-      {/* 4. Original CRM Operational Tour & Video Walkthrough */}
+      {/* 2. CRM Presentability at TOP of Website (Intake Defect Cam & Operational Tour) */}
       <OriginalCRMTourSection onConnectCRM={onOpenTrial} />
 
-      {/* 4. High-Speed POS Counter Billing Studio */}
-      <InteractivePOSDemo />
-
-      {/* 5. Real-World Ground Scenario Dispute Solver */}
+      {/* 3. Real-World Ground Scenarios: Zero Lost Garments & Stop Customer Arguments */}
       <RealWorldCRMScenarios />
 
-      {/* 6. Turnkey Plant Machinery & Industrial Setup */}
+      {/* 4. 4 Pillars Unified Platform Navigator */}
+      <EcosystemPillarsNav />
+
+      {/* 5. 360° Plant & Retail Process 6-Stage Flowchart (Mobile-First Responsive) */}
+      <InteractiveProcessInfographic />
+
+      {/* 6. High-Speed POS Counter Billing Studio */}
+      <InteractivePOSDemo />
+
+      {/* 7. Ad-Free Interactive Store Growth Tools (Bill Generator, Profit Calc, QR) */}
+      <InteractiveToolsSuite />
+
+      {/* 8. Turnkey Plant Machinery & Industrial Setup */}
       <MachineryAndProcessSection onConsultation={onOpenTrial} />
 
-      {/* 7. Wholesale Raw Materials & Consumables Supply Chain */}
+      {/* 9. Wholesale Raw Materials & Consumables Supply Chain */}
       <RawMaterialsSupplySection onOrderSupplies={onOpenTrial} />
 
-      {/* 8. Our Own Manufacturing & White-Label Chemical Solutions */}
+      {/* 10. Our Own Manufacturing & White-Label Chemical Solutions */}
       <WhiteLabelChemicalsSection onSampleKitRequest={onOpenTrial} />
 
-      {/* 9. 10x Innovation Head-to-Head Comparison */}
+      {/* 11. 10x Innovation Head-to-Head Comparison */}
       <ComparisonWithCompetitor />
 
-      {/* 10. Mid-Page High-Converting Register Banner */}
+      {/* 12. Mid-Page High-Converting Register Banner */}
       <QuickConvertBanner
         onSuccess={(shop, phone) => {
           onOpenTrial();
         }}
       />
 
-      {/* 11. Customer Case Studies & Reviews */}
+      {/* 13. Customer Case Studies & Reviews */}
       <Testimonials />
 
-      {/* 12. FAQ Section */}
+      {/* 14. FAQ Section */}
       <FAQSection />
     </div>
   );

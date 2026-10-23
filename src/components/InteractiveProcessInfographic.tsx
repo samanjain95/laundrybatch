@@ -22,6 +22,7 @@ import {
   ExternalLink,
   ChevronRight
 } from 'lucide-react';
+import { getAssetUrl } from '../utils/assetUrl';
 
 interface ProcessStep {
   id: number;
@@ -153,7 +154,7 @@ const CORE_PRODUCTS: ProductPillar[] = [
     title: 'High-Speed Front Counter POS Terminal',
     description: 'Bilingual touchscreen POS engineered specifically for busy laundry counters. Generates QR thermal bills in under 3 seconds and runs 100% offline.',
     highlight: 'Works during internet & power cuts with auto-cloud sync',
-    imageSrc: '/images/pos_terminal.jpg',
+    imageSrc: getAssetUrl('images/pos_terminal.jpg'),
     badge: '3,400+ Counters Active',
     badgeColor: '#0d9488',
     linkTo: '/pos',
@@ -171,7 +172,7 @@ const CORE_PRODUCTS: ProductPillar[] = [
     title: 'Garment Defect Camera & Smart CRM',
     description: 'Eliminate lost cloth allegations and stained garment arguments forever with pre-wash photographic proof and automated customer timeline alerts.',
     highlight: '99.8% Dispute Elimination across 4,200+ partner outlets',
-    imageSrc: '/images/hero_laundry.jpg',
+    imageSrc: getAssetUrl('images/hero_laundry.jpg'),
     badge: 'Dispute-Proof Guarantee',
     badgeColor: '#6366f1',
     linkTo: '/crm',
@@ -189,7 +190,7 @@ const CORE_PRODUCTS: ProductPillar[] = [
     title: 'Turnkey Commercial Laundry Machinery',
     description: 'Heavy-duty commercial Washer-Extractors (15kg-120kg), steam tumble dryers, and utility vacuum press tables built with SUS-304 stainless steel.',
     highlight: 'Engineered for 16-hour daily continuous factory shifts',
-    imageSrc: '/images/machinery_facility.jpg',
+    imageSrc: getAssetUrl('images/machinery_facility.jpg'),
     badge: '42% Water & Power Saved',
     badgeColor: '#0284c7',
     linkTo: '/machinery',
@@ -207,7 +208,7 @@ const CORE_PRODUCTS: ProductPillar[] = [
     title: 'White-Label Bio-Enzymes & Custom Bottling',
     description: 'Factory-direct industrial detergents, bio-enzyme stain lifters, and luxury fabric conditioners custom-bottled with your own company branding & logo.',
     highlight: 'Your own brand on bottles — build customer trust & resale revenue',
-    imageSrc: '/images/chemicals_bottles.jpg',
+    imageSrc: getAssetUrl('images/chemicals_bottles.jpg'),
     badge: 'Zero Fabric Fading',
     badgeColor: '#ec4899',
     linkTo: '/chemicals',
@@ -225,7 +226,7 @@ const CORE_PRODUCTS: ProductPillar[] = [
     title: '200°C Heat-Seal QR Rolls & Poly Supplies',
     description: 'Complete wholesale consumable supply chain shipped directly from our Delhi Central Warehouse: non-tear tags, poly bags, luxury hangers, and collar stays.',
     highlight: 'Same-day dispatch across North, South, East & West India',
-    imageSrc: '/images/laundry_owner.jpg',
+    imageSrc: getAssetUrl('images/laundry_owner.jpg'),
     badge: 'Direct Factory Pricing',
     badgeColor: '#f59e0b',
     linkTo: '/supplies',
@@ -415,7 +416,7 @@ export const InteractiveProcessInfographic: React.FC = () => {
             }}
           >
             <img
-              src="/images/process_infographic.jpg"
+              src={getAssetUrl('images/process_infographic.jpg')}
               alt="Complete Commercial Laundry Plant & Factory Process Flow"
               style={{
                 width: '100%',

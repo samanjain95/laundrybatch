@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   Receipt, 
   Tag, 
@@ -25,6 +25,12 @@ interface ToolsSuiteProps {
 
 export const InteractiveToolsSuite: React.FC<ToolsSuiteProps> = ({ activeToolId = 'bill-generator' }) => {
   const [selectedTool, setSelectedTool] = useState(activeToolId);
+
+  useEffect(() => {
+    if (activeToolId) {
+      setSelectedTool(activeToolId);
+    }
+  }, [activeToolId]);
 
   // --- Tool 1: Bill Generator State ---
   const [billShopName, setBillShopName] = useState('Bright & Clean Laundry');
@@ -102,7 +108,7 @@ export const InteractiveToolsSuite: React.FC<ToolsSuiteProps> = ({ activeToolId 
   ];
 
   return (
-    <section id="tools" style={{ padding: '80px 0', backgroundColor: 'var(--bg-surface)' }}>
+    <section id="tools" style={{ padding: 'clamp(40px, 6vw, 75px) 0', backgroundColor: 'var(--bg-surface)' }}>
       <div className="container">
         
         {/* Header */}
@@ -163,7 +169,7 @@ export const InteractiveToolsSuite: React.FC<ToolsSuiteProps> = ({ activeToolId 
 
         {/* Tab Content 1: Bill & Invoice Generator */}
         {selectedTool === 'bill-generator' && (
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '32px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 290px), 1fr))', gap: '32px' }}>
             {/* Editor */}
             <div className="glass-panel" style={{ padding: '24px' }}>
               <h3 style={{ fontSize: '1.2rem', marginBottom: '16px', color: 'var(--text-main)', display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -443,7 +449,7 @@ export const InteractiveToolsSuite: React.FC<ToolsSuiteProps> = ({ activeToolId 
 
         {/* Tab Content 3: Profit & ROI Calculator */}
         {selectedTool === 'profit-calculator' && (
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '32px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 290px), 1fr))', gap: '32px' }}>
             <div className="glass-panel" style={{ padding: '28px' }}>
               <h3 style={{ fontSize: '1.25rem', marginBottom: '20px', color: 'var(--text-main)', display: 'flex', alignItems: 'center', gap: '8px' }}>
                 <Calculator size={20} color="#0d9488" /> Input Store Operating Metrics
@@ -671,7 +677,7 @@ export const InteractiveToolsSuite: React.FC<ToolsSuiteProps> = ({ activeToolId 
 
         {/* Tab Content 5: AI Stain Removal Guide */}
         {selectedTool === 'stain-guide' && (
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '32px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 290px), 1fr))', gap: '32px' }}>
             {/* Stain Selector List */}
             <div className="glass-panel" style={{ padding: '20px' }}>
               <div style={{ fontSize: '0.85rem', fontWeight: 700, color: 'var(--text-sub)', marginBottom: '14px' }}>
@@ -789,7 +795,7 @@ export const InteractiveToolsSuite: React.FC<ToolsSuiteProps> = ({ activeToolId 
 
         {/* Tab Content 6: WhatsApp Poster Generator */}
         {selectedTool === 'whatsapp-posters' && (
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '32px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 290px), 1fr))', gap: '32px' }}>
             <div className="glass-panel" style={{ padding: '24px' }}>
               <h3 style={{ fontSize: '1.2rem', marginBottom: '16px', color: 'var(--text-main)' }}>
                 Customize Marketing Flyer
@@ -944,7 +950,7 @@ export const InteractiveToolsSuite: React.FC<ToolsSuiteProps> = ({ activeToolId 
 
         {/* Tab Content 7: QR Code Generator */}
         {selectedTool === 'qr-generator' && (
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '32px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 290px), 1fr))', gap: '32px' }}>
             <div className="glass-panel" style={{ padding: '24px' }}>
               <h3 style={{ fontSize: '1.25rem', marginBottom: '16px', color: 'var(--text-main)', display: 'flex', alignItems: 'center', gap: '8px' }}>
                 <QrCode size={20} color="#0d9488" /> UPI Payment & Tag Generator
@@ -1030,7 +1036,7 @@ export const InteractiveToolsSuite: React.FC<ToolsSuiteProps> = ({ activeToolId 
 
         {/* Tab Content 8: Staff Salary Calculator */}
         {selectedTool === 'salary-calculator' && (
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '32px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 290px), 1fr))', gap: '32px' }}>
             <div className="glass-panel" style={{ padding: '24px' }}>
               <h3 style={{ fontSize: '1.25rem', marginBottom: '20px', color: 'var(--text-main)', display: 'flex', alignItems: 'center', gap: '8px' }}>
                 <Users size={20} color="#0d9488" /> Staff Payout & Commission Calculator

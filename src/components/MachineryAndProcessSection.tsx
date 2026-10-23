@@ -12,6 +12,7 @@ import {
   Sparkles,
   PhoneCall
 } from 'lucide-react';
+import { getAssetUrl } from '../utils/assetUrl';
 
 interface MachineCategory {
   id: string;
@@ -109,7 +110,7 @@ export const MachineryAndProcessSection: React.FC<{ onConsultation: () => void }
           border: '1px solid var(--border-light)'
         }}>
           <img
-            src="/images/machinery_facility.jpg"
+            src={getAssetUrl('images/machinery_facility.jpg')}
             alt="Industrial commercial laundry machinery facility"
             style={{ width: '100%', height: 'auto', maxHeight: '420px', objectFit: 'cover', display: 'block' }}
           />
