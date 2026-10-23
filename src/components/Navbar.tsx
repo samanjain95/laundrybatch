@@ -186,7 +186,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               Laundry<span style={{ color: '#0d9488' }}>batch</span>
             </div>
             <div style={{ fontSize: '0.62rem', color: '#0d9488', fontWeight: 800, letterSpacing: '0.04em', textTransform: 'uppercase' }}>
-              Ecosystem
+              The Complete Laundry OS
             </div>
           </div>
         </Link>

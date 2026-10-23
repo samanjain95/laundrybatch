@@ -56,7 +56,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenTool, onOpenLegal, onOpenD
                 <Sparkles size={20} />
               </div>
               <span style={{ fontSize: '1.4rem', fontWeight: 800, color: 'var(--text-main)', letterSpacing: '-0.02em' }}>
-                Laundry<span style={{ color: '#0d9488' }}>batch</span>
+                Laundry<span style={{ color: '#0d9488' }}>verse</span>
               </span>
             </Link>
 
