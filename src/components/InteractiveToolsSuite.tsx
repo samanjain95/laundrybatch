@@ -176,7 +176,7 @@ export const InteractiveToolsSuite: React.FC<ToolsSuiteProps> = ({ activeToolId 
                 <Receipt size={20} color="#0d9488" /> Invoice Customizer
               </h3>
 
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginBottom: '14px' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: '12px', marginBottom: '14px' }}>
                 <div>
                   <label style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--text-muted)', display: 'block', marginBottom: '4px' }}>
                     Shop / Store Name
@@ -201,7 +201,7 @@ export const InteractiveToolsSuite: React.FC<ToolsSuiteProps> = ({ activeToolId 
                 </div>
               </div>
 
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginBottom: '14px' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: '12px', marginBottom: '14px' }}>
                 <div>
                   <label style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--text-muted)', display: 'block', marginBottom: '4px' }}>
                     Customer Name
@@ -232,43 +232,70 @@ export const InteractiveToolsSuite: React.FC<ToolsSuiteProps> = ({ activeToolId 
                   Bill Line Items
                 </div>
                 {billItems.map((item, index) => (
-                  <div key={index} style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr auto', gap: '8px', marginBottom: '8px', alignItems: 'center' }}>
+                  <div
+                    key={index}
+                    style={{
+                      display: 'flex',
+                      flexWrap: 'wrap',
+                      gap: '8px',
+                      marginBottom: '10px',
+                      alignItems: 'center',
+                      background: 'var(--bg-main)',
+                      padding: '8px',
+                      borderRadius: '8px',
+                      border: '1px solid var(--border-light)'
+                    }}
+                  >
                     <input
                       type="text"
+                      placeholder="Item Name"
                       value={item.name}
                       onChange={(e) => {
                         const newItems = [...billItems];
                         newItems[index].name = e.target.value;
                         setBillItems(newItems);
                       }}
-                      style={{ padding: '6px 8px', borderRadius: '4px', border: '1px solid var(--border-light)', background: 'var(--bg-main)', color: 'var(--text-main)', fontSize: '0.82rem' }}
+                      style={{ flex: '1 1 180px', minWidth: '140px', padding: '8px 10px', borderRadius: '6px', border: '1px solid var(--border-medium)', background: 'var(--bg-surface)', color: 'var(--text-main)', fontSize: '0.85rem' }}
                     />
-                    <input
-                      type="number"
-                      value={item.qty}
-                      onChange={(e) => {
-                        const newItems = [...billItems];
-                        newItems[index].qty = Number(e.target.value);
-                        setBillItems(newItems);
-                      }}
-                      style={{ padding: '6px 8px', borderRadius: '4px', border: '1px solid var(--border-light)', background: 'var(--bg-main)', color: 'var(--text-main)', fontSize: '0.82rem' }}
-                    />
-                    <input
-                      type="number"
-                      value={item.rate}
-                      onChange={(e) => {
-                        const newItems = [...billItems];
-                        newItems[index].rate = Number(e.target.value);
-                        setBillItems(newItems);
-                      }}
-                      style={{ padding: '6px 8px', borderRadius: '4px', border: '1px solid var(--border-light)', background: 'var(--bg-main)', color: 'var(--text-main)', fontSize: '0.82rem' }}
-                    />
-                    <button
-                      onClick={() => setBillItems(billItems.filter((_, i) => i !== index))}
-                      style={{ background: 'none', border: 'none', color: '#ef4444', cursor: 'pointer', padding: '4px' }}
-                    >
-                      <Trash2 size={16} />
-                    </button>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '6px', flex: '1 1 auto', justifyContent: 'flex-end' }}>
+                      <input
+                        type="number"
+                        placeholder="Qty"
+                        value={item.qty}
+                        onChange={(e) => {
+                          const newItems = [...billItems];
+                          newItems[index].qty = Number(e.target.value);
+                          setBillItems(newItems);
+                        }}
+                        style={{ width: '55px', padding: '8px 4px', borderRadius: '6px', border: '1px solid var(--border-medium)', background: 'var(--bg-surface)', color: 'var(--text-main)', fontSize: '0.85rem', textAlign: 'center' }}
+                      />
+                      <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>× ₹</span>
+                      <input
+                        type="number"
+                        placeholder="Rate"
+                        value={item.rate}
+                        onChange={(e) => {
+                          const newItems = [...billItems];
+                          newItems[index].rate = Number(e.target.value);
+                          setBillItems(newItems);
+                        }}
+                        style={{ width: '70px', padding: '8px 6px', borderRadius: '6px', border: '1px solid var(--border-medium)', background: 'var(--bg-surface)', color: 'var(--text-main)', fontSize: '0.85rem' }}
+                      />
+                      <span style={{ fontWeight: 700, fontSize: '0.85rem', color: '#0d9488', minWidth: '55px', textAlign: 'right' }}>
+                        = ₹{item.qty * item.rate}
+                      </span>
+                      <button
+                        onClick={() => {
+                          if (billItems.length > 1) {
+                            setBillItems(billItems.filter((_, i) => i !== index));
+                          }
+                        }}
+                        style={{ background: 'none', border: 'none', color: '#ef4444', cursor: 'pointer', padding: '6px', display: 'flex', alignItems: 'center' }}
+                        title="Delete Item"
+                      >
+                        <Trash2 size={16} />
+                      </button>
+                    </div>
                   </div>
                 ))}
 
@@ -282,7 +309,7 @@ export const InteractiveToolsSuite: React.FC<ToolsSuiteProps> = ({ activeToolId 
               </div>
 
               {/* Discount Input */}
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px', flexWrap: 'wrap' }}>
                 <label style={{ fontSize: '0.82rem', color: 'var(--text-sub)', fontWeight: 600 }}>Discount (₹):</label>
                 <input
                   type="number"
@@ -292,10 +319,31 @@ export const InteractiveToolsSuite: React.FC<ToolsSuiteProps> = ({ activeToolId 
                 />
               </div>
 
-              <div style={{ display: 'flex', gap: '12px' }}>
+              <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
                 <button onClick={() => window.print()} className="btn-primary" style={{ padding: '10px 18px', fontSize: '0.88rem' }}>
                   <Printer size={16} /> Print Official Receipt
                 </button>
+                <a
+                  href={`https://wa.me/?text=${encodeURIComponent(
+                    `*${billShopName} - INVOICE*\nCustomer: ${billCustomer}\nItems: ${billItems.map(i => `${i.name} (x${i.qty}) = ₹${i.qty * i.rate}`).join(', ')}\nTotal: ₹${billTotal}\nThank you for choosing ${billShopName}!`
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '6px',
+                    padding: '10px 16px',
+                    borderRadius: '10px',
+                    backgroundColor: '#25D366',
+                    color: 'white',
+                    fontWeight: 700,
+                    fontSize: '0.88rem',
+                    textDecoration: 'none'
+                  }}
+                >
+                  <Share2 size={16} /> WhatsApp Bill
+                </a>
               </div>
             </div>
 

@@ -128,9 +128,9 @@ export const RealWorldCRMScenarios: React.FC = () => {
         {/* Friendly Scenario Switcher Tabs */}
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(210px, 1fr))',
-          gap: '10px',
-          marginBottom: '28px'
+          gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 150px), 1fr))',
+          gap: '8px',
+          marginBottom: '24px'
         }}>
           {scenarios.map((item) => {
             const TabIcon = item.icon;
@@ -180,7 +180,7 @@ export const RealWorldCRMScenarios: React.FC = () => {
           background: 'var(--bg-surface)',
           borderRadius: '20px',
           border: '1px solid var(--border-light)',
-          padding: '36px',
+          padding: 'clamp(16px, 4vw, 36px)',
           boxShadow: 'var(--shadow-md)'
         }}>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '12px', marginBottom: '24px' }}>
@@ -228,8 +228,8 @@ export const RealWorldCRMScenarios: React.FC = () => {
           {/* Problem vs Solution Split */}
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(290px, 1fr))',
-            gap: '24px',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))',
+            gap: '20px',
             marginBottom: '28px'
           }}>
             {/* The Real Problem */}

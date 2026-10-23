@@ -13,6 +13,7 @@ import {
   PhoneCall
 } from 'lucide-react';
 import { getAssetUrl } from '../utils/assetUrl';
+import { SmartImage } from './SmartImage';
 
 interface MachineCategory {
   id: string;
@@ -109,9 +110,10 @@ export const MachineryAndProcessSection: React.FC<{ onConsultation: () => void }
           boxShadow: 'var(--shadow-lg)',
           border: '1px solid var(--border-light)'
         }}>
-          <img
+          <SmartImage
             src={getAssetUrl('images/machinery_facility.jpg')}
             alt="Industrial commercial laundry machinery facility"
+            fallbackTitle="Commercial Laundry Machinery Plant"
             style={{ width: '100%', height: 'auto', maxHeight: '420px', objectFit: 'cover', display: 'block' }}
           />
 
@@ -122,7 +124,7 @@ export const MachineryAndProcessSection: React.FC<{ onConsultation: () => void }
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'flex-end',
-            padding: '32px'
+            padding: 'clamp(14px, 4vw, 32px)'
           }}>
             <div style={{ maxWidth: '680px', color: '#ffffff' }}>
               <div style={{

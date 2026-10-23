@@ -157,9 +157,9 @@ export const OriginalCRMTourSection: React.FC<{ onConnectCRM?: () => void }> = (
         {/* 5-Step Navigation Tabs */}
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
-          gap: '10px',
-          marginBottom: '32px'
+          gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 140px), 1fr))',
+          gap: '8px',
+          marginBottom: '28px'
         }}>
           {crmScreens.map((screen, idx) => {
             const TabIcon = screen.icon;
@@ -212,11 +212,11 @@ export const OriginalCRMTourSection: React.FC<{ onConnectCRM?: () => void }> = (
           background: 'var(--bg-surface)',
           borderRadius: '24px',
           border: '1px solid var(--border-light)',
-          padding: '36px',
+          padding: 'clamp(16px, 4vw, 36px)',
           boxShadow: 'var(--shadow-md)',
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))',
-          gap: '40px',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))',
+          gap: 'clamp(20px, 4vw, 40px)',
           alignItems: 'center',
           marginBottom: '40px'
         }}>

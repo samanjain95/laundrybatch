@@ -541,18 +541,20 @@ a, button {
   /* Infographic mobile tweaks: HUD panel becomes natural relative card below image */
   .infographic-visual-canvas {
     aspect-ratio: auto !important;
-    min-height: 200px !important;
+    min-height: 220px !important;
     height: auto !important;
-    overflow: visible !important;
-    background: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
+    position: relative !important;
+    overflow: hidden !important;
+    border-radius: 16px !important;
+    border: 1px solid var(--border-light) !important;
   }
 
-  .infographic-visual-canvas > img {
-    height: 200px !important;
-    border-radius: 14px !important;
-    border: 1px solid var(--border-light) !important;
+  .infographic-visual-canvas img,
+  .infographic-visual-canvas .smart-image-fallback {
+    height: 220px !important;
+    width: 100% !important;
+    object-fit: cover !important;
+    border-radius: 16px !important;
   }
 
   .infographic-hud-panel {
@@ -564,11 +566,17 @@ a, button {
     padding: 14px !important;
     border-radius: 14px !important;
     box-shadow: var(--shadow-md) !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
   }
 
-  /* Hide tiny image hotspots on mobile (touch targets too small over photo) */
+  /* Keep touch-friendly hotspots visible on mobile */
   .infographic-visual-canvas button[title] {
-    display: none !important;
+    display: flex !important;
+    width: 30px !important;
+    height: 30px !important;
+    font-size: 0.8rem !important;
+    touch-action: manipulation;
   }
 }
 

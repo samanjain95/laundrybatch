@@ -26,6 +26,7 @@ import { LaundryTumblerCanvas } from './LaundryTumblerCanvas';
 import { translations } from '../data/translations';
 
 import { getAssetUrl } from '../utils/assetUrl';
+import { SmartImage } from './SmartImage';
 
 interface HeroProps {
   currentLang: string;
@@ -440,9 +441,10 @@ export const Hero: React.FC<HeroProps> = ({ currentLang, onOpenDemo, onOpenTrial
             
             {/* Visual Image / Interactive Canvas Container */}
             <div style={{ position: 'relative', borderRadius: '14px', overflow: 'hidden', border: '1px solid var(--border-light)', boxShadow: 'var(--shadow-sm)' }}>
-              <img
+              <SmartImage
                 src={currentPillarData.photo}
                 alt={currentPillarData.headline}
+                fallbackTitle={currentPillarData.title}
                 style={{
                   width: '100%',
                   height: '240px',

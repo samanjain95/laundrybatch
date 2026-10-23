@@ -23,6 +23,7 @@ import {
   ChevronRight
 } from 'lucide-react';
 import { getAssetUrl } from '../utils/assetUrl';
+import { SmartImage } from './SmartImage';
 
 interface ProcessStep {
   id: number;
@@ -334,7 +335,7 @@ export const InteractiveProcessInfographic: React.FC = () => {
             background: 'var(--bg-card)',
             border: '1px solid var(--border-light)',
             borderRadius: '24px',
-            padding: '28px',
+            padding: 'clamp(14px, 3.5vw, 28px)',
             marginBottom: '72px',
             boxShadow: '0 20px 50px -15px rgba(0,0,0,0.07)'
           }}
@@ -415,9 +416,10 @@ export const InteractiveProcessInfographic: React.FC = () => {
               boxShadow: 'inset 0 0 40px rgba(0,0,0,0.8)'
             }}
           >
-            <img
+            <SmartImage
               src={getAssetUrl('images/process_infographic.jpg')}
               alt="Complete Commercial Laundry Plant & Factory Process Flow"
+              fallbackTitle="360° Commercial Laundry Process Infographic"
               style={{
                 width: '100%',
                 height: '100%',
@@ -691,8 +693,8 @@ export const InteractiveProcessInfographic: React.FC = () => {
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))',
-              gap: '24px'
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))',
+              gap: '20px'
             }}
           >
             {CORE_PRODUCTS.map((prod) => (
@@ -710,9 +712,10 @@ export const InteractiveProcessInfographic: React.FC = () => {
               >
                 {/* Product Card Image Container */}
                 <div style={{ position: 'relative', width: '100%', height: '210px', overflow: 'hidden' }}>
-                  <img
+                  <SmartImage
                     src={prod.imageSrc}
                     alt={prod.title}
+                    fallbackTitle={prod.title}
                     style={{
                       width: '100%',
                       height: '100%',
